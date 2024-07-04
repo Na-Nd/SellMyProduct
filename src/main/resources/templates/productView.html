@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Current product</title>
+</head>
+<body>
+    <h1 th:text="${product.title}">Product title</h1>
+    <p>Owner: <a th:href="@{/person/{id}(id=${product.person.id})}" th:text="${product.person.name}">Owner</a></p>
+    <p>Price: <span th:text="${product.price}">0.00</span></p>
+    <p>Description: <span th:text="${product.description}">Product description</span></p>
+    <img th:src="@{/uploads/{filename}(filename=${product.imagePath})}" alt="Product Image">
+</body>
+</html>

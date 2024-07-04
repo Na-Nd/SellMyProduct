@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Current person</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1 th:text="${person.name}">Person Name</h1>
+    <p><a th:href="@{/home}">Go to home</a></p>
+</div>
+<p>Email: <span th:text="${person.email}">Email</span></p>
+<p><a th:href="@{/products/add}"><h2>Add new product</h2></a></p>
+<h2>Your products:</h2>
+<ul>
+    <li th:each="product : ${products}">
+        <h3 th:text="${product.title}">Product title</h3>
+        <p>Price: <span th:text="${product.price}">0.00</span></p>
+        <p>Description: <span th:text="${product.description}">Product description</span></p>
+        <img th:src="@{/uploads/{filename}(filename=${product.imagePath})}" alt="Product Image">
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Authentication code</title>
+</head>
+<body>
+<h1>Enter your authentication code</h1>
+<form th:action="@{/codeAuth}" method="post">
+    <div>
+        <label for="email">Repeat your email</label>
+        <input type="email" id="email" name="email"/>
+    </div>
+    <div>
+        <label for="authCode">Authentication code</label>
+        <input type="text" id="authCode" name="authCode"/>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+</body>
+</html>

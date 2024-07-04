@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h2>Welcome to Sell My Staff, <span th:text="${person.name}">Guest</span>!</h2>
+    <p><a th:href="@{/person/{id}(id=${person.id})}">Your profile</a></p>
+    <p><a th:href="@{/products}">Show all products</a></p>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>
